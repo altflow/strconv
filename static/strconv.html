@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>String Converter</title>
+    <!--
+        YUI dependency configurator URL:
+        http://developer.yahoo.com/yui/articles/hosting/?base&button&connection&event-simulate&json&logger&reset-fonts-grids&tabview&yahoo-dom-event&yuitest&MIN&norollup
+    --> 
+    <!-- Combo-handled YUI CSS files: -->
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.8.1/build/reset-fonts-grids/reset-fonts-grids.css&2.8.1/build/base/base-min.css&2.8.1/build/button/assets/skins/sam/button.css&2.8.1/build/logger/assets/skins/sam/logger.css&2.8.1/build/tabview/assets/skins/sam/tabview.css&2.8.1/build/yuitest/assets/skins/sam/yuitest.css">
+    
+    <link rel="stylesheet" type="text/css" href="strconv.css" media="all" />
+</head>
+<body class="yui-skin-sam">
+<div id="doc2">
+    <div id="hd">
+        <h1>String Converter</h1>
+    </div>
+    <div id="bd" class="yui-g">
+        <div id="left-column" class="yui-u first">
+            <h2>Input String</h2>
+            <textarea id="input-str" name="input-str" cols="60" rows="18"></textarea>
+            <p class="r-align">[<span id="select-input-str" class="action-link">Select Input String</span>]</p>
+        </div>
+        <div id="right-column" class="yui-u yui-navset">
+            <ul id="tab" class="yui-nav">
+                <li id="url-encoding" class="selected"><a href="#url-encoding-option"><em>URL Encoding</em></a></li>
+                <li id="unicode-escaping"><a href="#unicode-option"><em>Unicode</em></a></li>
+                <li id="json-formatter"><a href="#json-format-option"><em>JSON Formatter</em></a></li>
+            </ul>
+            <textarea id="converted-str" cols="60" rows="18"></textarea>
+            <p class="r-align">[<span id="select-converted-str" class="action-link">Select Converted String</span>]</p>
+            <div class="yui-content">
+                <div id="url-encoding-option">
+                    <div id="encoding" class="yui-buttongroup">
+                        <span class="label">Character Encoding:</span>
+                        <input type="radio" name="encoding" id="encoding-utf-8" value="utf-8" checked />
+                        <label for="encoding-utf-8" id="label-utf-8"></label>
+                        <input type="radio" name="encoding" id="encoding-shift_jis" value="shift_jis" />
+                        <label for="encoding-shift_jis" id="label-shift_jis"></label>
+                        <input type="radio" name="encoding" id="encoding-euc-jp" value="euc-jp" />
+                        <label for="encoding-euc-jp" id="label-euc-jp"></label>
+                        <input type="radio" name="encoding" id="encoding-iso-2022-jp" value="iso-2022-jp" />
+                        <label for="encoding-iso-2022-jp" id="label-iso-2022-jp"></label>
+                    </div>
+                    <div id="url-encoding-operation" class="yui-buttongroup">
+                        <span class="label">Operation:</span>
+                        <input type="radio" name="urlenc" id="url-encode" value="encode" checked />
+                        <label id="label-url-encode" for="url-encode"></label>
+                        <input type="radio" name="urlenc" id="url-decode" value="decode" />
+                        <label id="label-url-decode" for="url-decode"></label>
+                    </div>
+                </div>
+                <div id="unicode-option" class="yui-buttongroup">
+                    <span class="label">Operation:</span>
+                    <input type="radio" name="unicode-op" id="unicode-escape" value="escape" checked />
+                    <label for="unicode-escape" id="label-unicode-escape"></label>
+                    <input type="radio" name="unicode-op" id="unicode-unescape" value="unescape" />
+                    <label for="unicode-unescape" id="label-unicode-unescape"></label>
+                </div>
+                <div id="json-format-option">
+                    <label for="indent-num">Indent Num:</label>
+                    <input type="text" name="indent-num" id="indent-num" value="4" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ft">
+        <span id="run-test" class="action-link">Run Test Suite</span>
+    </div>
+</div>
+
+<!-- Combo-handled YUI JS files: -->
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.8.1/build/yahoo-dom-event/yahoo-dom-event.js&2.8.1/build/element/element-min.js&2.8.1/build/button/button-min.js&2.8.1/build/connection/connection-min.js&2.8.1/build/event-simulate/event-simulate-min.js&2.8.1/build/json/json-min.js&2.8.1/build/logger/logger-min.js&2.8.1/build/tabview/tabview-min.js&2.8.1/build/yuitest/yuitest-min.js"></script>
+
+<script type="text/javascript" src="strconv.js"></script>
+<script type="text/javascript" src="strconv-test.js"></script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1343416-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
